@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from . import view, testdb
+from . import view, testdb, search, test
 
 # r'^$ --> 根目录  --> http://127.0.0.1:8000
 # r'^hello$  --> 根目录下hello路径  --> http://127.0.0.1:8000/hello
@@ -24,4 +24,10 @@ urlpatterns = [
     url(r'^$', view.hello),
     url(r'^hello', view.hello),
     url(r'^testdb$', testdb.testdb),
+    url(r'^search_form$', search.search_form),
+    url(r'^search_get$', search.search_get),
+    url(r'^search_post$', search.search_post),
+    url(r'^test$', test.test),
+    url(r'^add$', test.add),
+    url(r'^find$', test.find)
 ]

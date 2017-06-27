@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试表单</title>
+</head>
+<body>
+    <form action="/search_get" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="搜索_get">
+    </form>
+
+    <form action="/search_post" method="post">
+        {% csrf_token %}
+        <input type="text" name="q">
+        <input type="submit" value="Submit_post">
+    </form>
+
+    <p>{{ rlt }}</p>
+</body>
+</html>
