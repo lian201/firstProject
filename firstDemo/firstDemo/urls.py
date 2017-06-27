@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.contrib import admin
 
 from . import view, testdb, search, test
 
@@ -21,6 +22,7 @@ from . import view, testdb, search, test
 # r'^hello$  --> 根目录下hello路径  --> http://127.0.0.1:8000/hello
 # r'^testdb$  --> 根目录下testdb路径  --> http://127.0.0.1:8000/testdb
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^$', view.hello),
     url(r'^hello', view.hello),
     url(r'^testdb$', testdb.testdb),
