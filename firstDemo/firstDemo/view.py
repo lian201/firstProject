@@ -1,5 +1,9 @@
-from django.http import HttpResponse
+# -*- coding: utf-8 -*-
+
+from django.shortcuts import render
 
 
 def hello(request):
-    return HttpResponse("Hello world !!! ")
+    context = {}
+    context['hello'] = 'Hello World!--new'
+    return render(request, 'nhello.html', context)
